@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <math.h>
 
 
@@ -7,21 +7,21 @@
  * @param a - значение параметра a
  * @return рассчитанное значение
 */
-double SGrani(double a);
+double SGrani(const double a);
 
 /**
  * @brief Расчитывает площадь поверхности всех граней куба
  * @param a - значение параметра a
  * @return рассчитанное значение
 */
-double SVsehGraney(double a);
+double SVsehGraney(const double a);
 
 /**
  * @brief Расчитывает объём куба
  * @param a - значение параметра a
  * @return рассчитанное значение
 */
-double V(double a);
+double V(const double a);
 
 
 /**
@@ -29,28 +29,32 @@ double V(double a);
  * @return возвращает 0,если программа выполнена корректно
  */
 int main() {
-	double a;
+	double a = 0;
 	scanf_s("%lf", &a);
-
-	printf("SGrani = %lf\n", SGrani(a) );
-	printf("SVsehGraney = %lf\n", SVsehGraney(a) );
-	printf("V = %lf\n", V(a) );
+	if (a >= 0) {
+		printf("SGrani = %lf\n", SGrani(a));
+		printf("SVsehGraney = %lf\n", SVsehGraney(a));
+		printf("V = %lf\n", V(a));
+	}
+	else {
+		printf ("NO");
+	}
 	return 0;
 }
 
-double SGrani(double a)
+double SGrani(const double a)
 {
 	return a * a;
 
 }
 
-double SVsehGraney(double a)
+double SVsehGraney(const double a)
 {
 	return a * a * 6;
 
 }
 
-double V(double a)
+double V(const double a)
 {
 	return a * a * a;
 
