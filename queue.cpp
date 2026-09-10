@@ -216,7 +216,7 @@ std::string Queue::toString() const
  * @return Ссылка на текущий объект (для цепочечных вызовов)
  * @example q << 10 << 20 << 30; // добавляет три элемента
  */
-Queue& Queue::operator<<(int value)
+Queue& Queue::operator<<(const int value)
 {
     enqueue(value);
     return *this;
@@ -241,7 +241,7 @@ Queue& Queue::operator>>(int& value)
  * @return true если элемент найден, false иначе
  * @note Линейный поиск, сложность O(n)
  */
-bool Queue::contains(int value) const
+bool Queue::contains(const int value) const
 {
     Node* current = head;
     while (current != nullptr)
