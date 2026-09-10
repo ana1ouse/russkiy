@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include "triangle.h"
+#include <limits>
+
+static const double EPS = 1e-9;
 
 Triangle::Triangle(const Point& p1, const Point& p2, const Point& p3)
 {
@@ -29,7 +32,7 @@ Triangle::Triangle(const Point& p1, const Point& p2, const Point& p3)
     
     double len = sqrt(nx * nx + ny * ny + nz * nz);
     
-    if (len < 1e-9)
+    if (len < EPS)
     {
         std::cout << "Ошибка: Треугольник вырожден (точки лежат на одной прямой)!" << std::endl;
         exit(1);
@@ -56,7 +59,7 @@ bool Triangle::isPointOnPlane(const Point& p) const
     
     double value = nx * dx + ny * dy + nz * dz;
     
-    if (value > -1e-9 && value < 1e-9)
+    if (value > -(EPS) && value < EPS)
     {
         return true;
     }
@@ -82,7 +85,7 @@ double Triangle::distanceToPlane(const Point& p) const
     
     double len = sqrt(nx * nx + ny * ny + nz * nz);
     
-    if (len < 1e-9)
+    if (len < EPS)
     {
         return 0.0;
     }
