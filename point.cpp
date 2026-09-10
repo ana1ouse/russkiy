@@ -2,7 +2,7 @@
 #include <cmath>
 #include <limits>
 
-Point::Point(double x, double y, double z)
+Point::Point(const double x, const double y, const double z)
 {
     this->x = x;
     this->y = y;
