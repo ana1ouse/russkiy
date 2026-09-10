@@ -11,8 +11,16 @@ namespace VectorLib {
  */
 class Point {
 private:
-    double m_x;  ///< Абсцисса точки
-    double m_y;  ///< Ордината точки
+    /**
+     * @brief Абсцисса точки
+     * @details Хранит значение координаты x
+     */
+    double m_x;
+    /**
+     * @brief Ордината точки
+     * @details Хранит значение координаты y
+     */
+    double m_y;
 
 public:
     /**
