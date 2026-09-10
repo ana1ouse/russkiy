@@ -13,8 +13,17 @@ namespace VectorLib {
  */
 class Vector {
 protected:
-    Point m_start;  ///< Начальная точка вектора
-    Point m_end;    ///< Конечная точка вектора
+    /**
+     * @brief Начальная точка вектора
+     * @details Хранит координаты начала вектора
+     */
+    Point m_start;
+
+    /**
+     * @brief Конечная точка вектора
+     * @details Хранит координаты конца вектора
+     */
+    Point m_end;
 
 public:
     /**
