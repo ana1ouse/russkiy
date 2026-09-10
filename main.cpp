@@ -7,14 +7,14 @@
  * @param report - строка информации
  * @return считанное значение
  */
-double getValue(std::string report = "");
+double getValue(const std::string report = "");
 
 /**
  * @brief Вводит точку с клавиатуры
  * @param pointName - название точки для вывода в приглашении
  * @return введенная точка
  */
-Point getPoint(std::string pointName);
+Point getPoint(const std::string pointName);
 
 /**
  * @brief Точка входа в программу
@@ -49,7 +49,7 @@ int main()
     return 0;
 }
 
-double getValue(std::string report)
+double getValue(const std::string report)
 {
     std::cout << report;
     double value = 0;
@@ -64,7 +64,7 @@ double getValue(std::string report)
     return value;
 }
 
-Point getPoint(std::string pointName)
+Point getPoint(const std::string pointName)
 {
     std::cout << "\n--- Ввод " << pointName << "-й точки ---" << std::endl;
     double x = getValue("Введите x: ");
